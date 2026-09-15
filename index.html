@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>محمود و بسملة</title>
+<meta name="description" content="نتشرف بدعوتكم لحضور حفل زفافنا محمود و بسملة">
+<meta property="og:type" content="website">
+<meta property="og:title" content="محمود و بسملة">
+<meta property="og:description" content="نتشرف بدعوتكم لحضور حفل زفافنا">
+<meta property="og:image" content="two.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="محمود و بسملة">
+<meta name="twitter:description" content="نتشرف بدعوتكم لحضور حفل زفافنا">
+<meta name="twitter:image" content="two.png">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #0f1c3f;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* يظهر بشكل صحيح على الموبايل فقط - على الشاشات الكبيرة يظهر بعرض موبايل في المنتصف */
+  .phone-frame {
+    width: 100%;
+    max-width: 480px;
+    min-height: 100vh;
+    background: #fff;
+    position: relative;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: 64px;
+    background: linear-gradient(180deg, #16244c, #0f1c3f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #c9a86a;
+  }
+
+  .topbar span {
+    color: #d9bd82;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .gallery {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gallery img {
+    width: 100%;
+    display: block;
+  }
+
+  .clickable {
+    cursor: pointer;
+  }
+
+  .location-wrap {
+    position: relative;
+  }
+
+  .location-wrap img {
+    width: 100%;
+    display: block;
+  }
+
+  .map-link {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: transform 0.15s ease, background 0.2s ease;
+  }
+
+  .map-link:active {
+    transform: scale(0.96);
+    background: rgba(201, 168, 106, 0.15);
+  }
+
+  .map-link .map-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: linear-gradient(180deg, #16244c, #0f1c3f);
+    color: #d9bd82;
+    border: 1px solid #c9a86a;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.35);
+  }
+
+  .map-link.left {
+    left: 9%;
+    top: 55%;
+    width: 26%;
+    height: 26%;
+  }
+
+  .map-link.right {
+    left: 65%;
+    top: 55%;
+    width: 26%;
+    height: 26%;
+  }
+
+  /* حجب المحتوى على الشاشات الكبيرة (ديسكتوب) خارج إطار الموبايل */
+  .desktop-hint {
+    display: none;
+  }
+
+  @media (min-width: 769px) {
+    body { background: #08122a; }
+    .desktop-hint {
+      display: block;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #6d7ba3;
+      font-size: 13px;
+      z-index: 100;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="desktop-hint">هذا التصميم مخصص لعرضه على الموبايل</div>
+
+  <div class="phone-frame">
+    <div class="topbar">
+      <span>محمود و بسملة</span>
+    </div>
+
+    <div class="gallery">
+      <img id="img-stamp" class="clickable" src="one.png" alt="one">
+      <img id="img-second" src="two.png" alt="two">
+      <img src="there.png" alt="there">
+      <img src="four.png" alt="four">
+      <div class="location-wrap">
+        <img src="five.png" alt="location">
+        <a class="map-link left" href="https://maps.app.goo.gl/MSZgL17RpAEkvQnc6?g_st=ic" target="_blank" rel="noopener noreferrer">
+          <span class="map-badge">📍 افتح الموقع</span>
+        </a>
+        <a class="map-link right" href="https://maps.app.goo.gl/q86GijbMUVKEfaoYA?g_st=ic" target="_blank" rel="noopener noreferrer">
+          <span class="map-badge">📍 افتح الموقع</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+<script>
+  document.getElementById('img-stamp').addEventListener('click', function () {
+    document.getElementById('img-second').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>
+
+</body>
+</html>
